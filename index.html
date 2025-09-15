@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>No Code Pioneers | Build Apps Without Code</title>
+  <meta name="description" content="A clear and friendly landing page explaining no-code for training content designers. Learn what it is, how to start, and which tools to try." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #101826;
+      --card: #1e293b;
+      --soft: #334155;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --brand: #7c3aed;
+      --brand-2: #22d3ee;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width:min(1100px,92%); margin:0 auto; }
+
+    /* HERO */
+    .hero { position:relative; padding:72px 18px; text-align:center; overflow:hidden; }
+    .hero::before { /* hero image overlay */
+      content:""; position:absolute; inset:0; z-index:-1;
+      background:
+        linear-gradient(180deg, rgba(15,23,42,.85), rgba(15,23,42,.95)),
+        url('images/hero-clay.jpg') center/cover no-repeat;
+    }
+    .logo { width:120px; height:120px; border-radius:50%; background:rgba(255,255,255,.04); border:4px solid rgba(255,255,255,.2); object-fit:cover; }
+    h1 { font-size:clamp(28px,5vw,40px); margin:20px 0 10px; }
+    p { margin:0 0 16px; }
+    .cta-row { margin-top: 16px; }
+    .btn { display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; margin:5px; background:var(--brand); color:#fff; border:1px solid transparent; }
+    .btn.secondary { background:transparent; border-color:rgba(255,255,255,.3); }
+
+    /* SECTIONS */
+    section { padding:56px 0; }
+    .section-title { font-size:clamp(20px,3.5vw,26px); margin:0 0 10px; }
+    .section-sub { color:var(--muted); margin:0 0 24px; }
+
+    .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); }
+    .card { background:var(--card); border-radius:14px; padding:18px; }
+
+    /* Illustration blocks */
+    .illu { width:100%; height:140px; border-radius:12px; background:#0f2034 url('images/placeholder-clay-1.png') center/contain no-repeat; margin-bottom:12px; border:1px solid rgba(255,255,255,.06); }
+    .illu.forms { background-image:url('images/placeholder-clay-forms.png'); }
+    .illu.apps { background-image:url('images/placeholder-clay-apps.png'); }
+
+    /* Tools icons */
+    .tool { display:flex; align-items:flex-start; gap:12px; padding:14px; border:1px solid rgba(255,255,255,.08); border-radius:12px; background:var(--panel); }
+    .tool .icon { width:48px; height:48px; border-radius:12px; background:#0f2034 url('images/icon-tool.png') center/70% no-repeat; flex:0 0 auto; }
+    .tool.glide .icon { background-image:url('images/icon-glide.png'); }
+    .tool.softr .icon { background-image:url('images/icon-softr.png'); }
+    .tool.tally .icon { background-image:url('images/icon-tally.png'); }
+    .tool.landbot .icon { background-image:url('images/icon-landbot.png'); }
+
+    /* Use-cases illustrations */
+    .use-illu { width:100%; height:120px; border-radius:12px; background:#0f2034 url('images/use-onboarding.png') center/contain no-repeat; margin-bottom:10px; border:1px solid rgba(255,255,255,.06); }
+    .use-chat { background-image:url('images/use-chatbot.png'); }
+    .use-micro { background-image:url('images/use-micro.png'); }
+
+    .footer { text-align:center; padding:34px 0; color:#94a3b8; font-size:.9rem; }
+
+    html { scroll-behavior:smooth; }
+    /* Inline claymorphic SVG styling */
+    .hero-art { position:absolute; inset:0; z-index:-1; display:block; }
+    .hero-art svg { width:100%; height:100%; display:block; }
+    .illu-svg, .use-svg, .icon-svg { width:100%; height:140px; display:block; border-radius:12px; }
+    .icon-svg { width:48px; height:48px; border-radius:12px; flex:0 0 auto; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <img class="logo" src="logo-placeholder.png" alt="Your Logo" />
+      <h1>Build Apps Without Code</h1>
+      <p>Create training tools with drag and drop. No coding needed. Made for instructional designers, trainers, and L&amp;D teams who want to ship useful things fast.</p>
+      <div class="cta-row">
+        <a href="#start" class="btn">Start here</a>
+        <a href="#tools" class="btn secondary">See simple tools</a>
+      </div>
+      <p>⚡ Quick to learn &nbsp; 🧩 Drag-and-drop interface &nbsp; 📱 Works on any device</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 1600 800" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1e293b"/>
+            <stop offset="1" stop-color="#0f172a"/>
+          </linearGradient>
+          <radialGradient id="bubble" cx="50%" cy="40%" r="60%">
+            <stop offset="0" stop-color="#7c3aed" stop-opacity="0.45"/>
+            <stop offset="1" stop-color="#22d3ee" stop-opacity="0.15"/>
+          </radialGradient>
+        </defs>
+        <rect width="1600" height="800" fill="url(#g1)"/>
+        <g opacity="0.6">
+          <ellipse cx="300" cy="200" rx="260" ry="180" fill="url(#bubble)"/>
+          <ellipse cx="1350" cy="250" rx="220" ry="160" fill="url(#bubble)"/>
+          <ellipse cx="900" cy="620" rx="300" ry="180" fill="url(#bubble)"/>
+        </g>
+        <!-- simplified clay cards -->
+        <g opacity="0.65">
+          <rect x="260" y="420" rx="28" ry="28" width="340" height="200" fill="#1f2b40"/>
+          <rect x="310" y="460" rx="12" ry="12" width="240" height="24" fill="#3b82f6"/>
+          <rect x="310" y="500" rx="10" ry="10" width="200" height="16" fill="#94a3b8"/>
+          <rect x="620" y="420" rx="28" ry="28" width="320" height="200" fill="#1f2b40"/>
+          <rect x="1040" y="420" rx="28" ry="28" width="320" height="200" fill="#1f2b40"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <section id="what" class="container">
+      <h2 class="section-title">What is no code?</h2>
+      <p class="section-sub">No code lets you build working learning tools by arranging ready pieces instead of writing code. You choose the parts. The platform connects them.</p>
+      <div class="grid">
+        <div class="card">
+          <svg class="illu-svg" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2b40"/>
+      <stop offset="1" stop-color="#0f2034"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="700" height="300" rx="20" fill="url(#c1)"/>
+  <rect x="48" y="42" width="380" height="44" rx="12" fill="#7c3aed"/>
+  <rect x="48" y="110" width="300" height="18" rx="9" fill="#cbd5e1" opacity="0.9"/>
+  <rect x="48" y="144" width="260" height="18" rx="9" fill="#94a3b8"/>
+  <circle cx="560" cy="150" r="60" fill="#22d3ee" opacity="0.4"/>
+</svg>
+          <h3>Lesson hubs</h3>
+          <p>Share modules, videos, and downloads in one place. Add buttons for enrolment and completion tracking.</p>
+        </div>
+        <div class="card">
+          <svg class="illu-svg" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="0" y="0" width="700" height="300" rx="20" fill="#10213a"/>
+  <rect x="60" y="50" width="420" height="38" rx="10" fill="#7c3aed"/>
+  <g transform="translate(60,110)">
+    <rect width="420" height="26" rx="8" fill="#e2e8f0"/>
+    <circle cx="390" cy="13" r="10" fill="#10b981"/>
+  </g>
+  <g transform="translate(60,150)">
+    <rect width="420" height="26" rx="8" fill="#e2e8f0"/>
+    <circle cx="390" cy="13" r="10" fill="#f59e0b"/>
+  </g>
+  <g transform="translate(60,190)">
+    <rect width="420" height="26" rx="8" fill="#e2e8f0"/>
+    <circle cx="390" cy="13" r="10" fill="#ef4444"/>
+  </g>
+</svg>
+          <h3>Forms and quizzes</h3>
+          <p>Collect learner info, pre-assessments, and feedback. Send results to a sheet automatically.</p>
+        </div>
+        <div class="card">
+          <svg class="illu-svg" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="0" y="0" width="700" height="300" rx="20" fill="#0f2034"/>
+  <rect x="470" y="40" width="160" height="220" rx="26" fill="#1f2b40"/>
+  <circle cx="550" cy="70" r="6" fill="#334155"/>
+  <rect x="490" y="100" width="120" height="22" rx="8" fill="#7c3aed"/>
+  <rect x="490" y="140" width="100" height="16" rx="8" fill="#cbd5e1"/>
+  <g>
+    <rect x="60" y="60" width="320" height="180" rx="18" fill="#1f2b40"/>
+    <rect x="90" y="90" width="260" height="18" rx="8" fill="#94a3b8"/>
+    <rect x="90" y="120" width="220" height="18" rx="8" fill="#cbd5e1"/>
+  </g>
+</svg>
+          <h3>Micro‑apps</h3>
+          <p>Build simple tools like checklists, calculators, and scenario prompts that support practice on the job.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="start" class="container">
+      <h2 class="section-title">How to get started</h2>
+      <p class="section-sub">Three straightforward steps to begin your no-code journey.</p>
+      <div class="grid">
+        <div class="card"><h3>1) Define your idea</h3><p>Write down what you want your app or site to achieve. Keep the scope focused so you can launch quickly.</p></div>
+        <div class="card"><h3>2) Choose a platform</h3><p>Pick one of the tools below. Most offer free plans so you can experiment without commitment.</p></div>
+        <div class="card"><h3>3) Build and test</h3><p>Use the editor to add features, preview the results, and adjust before sharing your project.</p></div>
+      </div>
+      <div style="margin-top:20px;"><a href="#tools" class="btn">Explore tools</a></div>
+    </section>
+
+    <section id="tools" class="container">
+      <h2 class="section-title">Tools that work well for L&amp;D</h2>
+      <p class="section-sub">Start with one. Each has a free plan so you can learn by doing.</p>
+      <div class="grid">
+        <div class="tool glide"><svg class="icon-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2b40"/>
+      <stop offset="1" stop-color="#0f2034"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="84" height="84" rx="18" fill="url(#ig)"/>
+  <circle cx="50" cy="34" r="14" fill="#7c3aed"/>
+  <rect x="28" y="58" width="44" height="10" rx="5" fill="#22d3ee"/>
+</svg><div><strong>Glide</strong><p>Create mobile microlearning apps from Google Sheets. Great for checklists and quick reference guides.</p></div></div>
+        <div class="tool softr"><svg class="icon-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2b40"/>
+      <stop offset="1" stop-color="#0f2034"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="84" height="84" rx="18" fill="url(#ig)"/>
+  <circle cx="50" cy="34" r="14" fill="#7c3aed"/>
+  <rect x="28" y="58" width="44" height="10" rx="5" fill="#22d3ee"/>
+</svg><div><strong>Airtable + Softr</strong><p>Use Airtable as your course database and Softr to turn it into a learner portal with logins and roles.</p></div></div>
+        <div class="tool tally"><svg class="icon-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2b40"/>
+      <stop offset="1" stop-color="#0f2034"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="84" height="84" rx="18" fill="url(#ig)"/>
+  <circle cx="50" cy="34" r="14" fill="#7c3aed"/>
+  <rect x="28" y="58" width="44" height="10" rx="5" fill="#22d3ee"/>
+</svg><div><strong>Tally Forms</strong><p>Collect enrolments, surveys, and assessments. Send results to Sheets or Airtable.</p></div></div>
+        <div class="tool landbot"><svg class="icon-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2b40"/>
+      <stop offset="1" stop-color="#0f2034"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="84" height="84" rx="18" fill="url(#ig)"/>
+  <circle cx="50" cy="34" r="14" fill="#7c3aed"/>
+  <rect x="28" y="58" width="44" height="10" rx="5" fill="#22d3ee"/>
+</svg><div><strong>Landbot</strong><p>Design chat scenarios for practice and support. Good for triage, FAQ, and simulated conversations.</p></div></div>
+      </div>
+    </section>
+
+    <section id="use-cases" class="container">
+      <h2 class="section-title">Three quick L&amp;D workflows</h2>
+      <div class="grid">
+        <div class="card"><svg class="use-svg" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="700" height="260" rx="18" fill="#0f2034"/>
+  <rect x="48" y="48" width="260" height="160" rx="16" fill="#1f2b40"/>
+  <rect x="340" y="60" width="280" height="22" rx="8" fill="#7c3aed"/>
+  <rect x="340" y="98" width="240" height="16" rx="8" fill="#cbd5e1"/>
+</svg><h3>Onboarding hub</h3><p>Structure policies, job aids, and short videos. Build in Softr using Airtable for content. Add a simple progress checklist.</p></div>
+        <div class="card"><svg class="use-svg" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="700" height="260" rx="18" fill="#0f2034"/>
+  <rect x="60" y="60" width="220" height="140" rx="20" fill="#1f2b40"/>
+  <circle cx="100" cy="100" r="10" fill="#22d3ee"/>
+  <rect x="96" y="118" width="140" height="16" rx="8" fill="#cbd5e1"/>
+  <rect x="320" y="80" width="280" height="26" rx="13" fill="#7c3aed"/>
+  <rect x="360" y="120" width="200" height="20" rx="10" fill="#94a3b8"/>
+</svg><h3>Scenario chatbot</h3><p>Design a conversation in Landbot with three branches: refusal, confusion, compliance. Export transcripts to a sheet for review.</p></div>
+        <div class="card"><svg class="use-svg" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="700" height="260" rx="18" fill="#0f2034"/>
+  <rect x="70" y="50" width="180" height="160" rx="24" fill="#1f2b40"/>
+  <circle cx="160" cy="72" r="6" fill="#334155"/>
+  <rect x="96" y="92" width="130" height="18" rx="9" fill="#7c3aed"/>
+  <rect x="96" y="122" width="110" height="16" rx="8" fill="#cbd5e1"/>
+  <rect x="300" y="72" width="300" height="22" rx="10" fill="#22d3ee"/>
+  <rect x="300" y="110" width="240" height="16" rx="8" fill="#94a3b8"/>
+</svg><h3>Microlearning app</h3><p>Create 10 bite‑size lessons in Glide. Each card links to a 2‑minute read and a 1‑question check. Track completion in a sheet.</p></div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">L&amp;D starter checklist</h2>
+      <div class="grid">
+        <div class="card"><p>✅ Problem statement: one sentence that names the learner and the job task.</p></div>
+        <div class="card"><p>✅ Outcome: what learners should do differently after using this.</p></div>
+        <div class="card"><p>✅ Data plan: where responses and progress will be stored.</p></div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">Common questions</h2>
+      <div class="card"><details><summary>Can I break it?</summary><p>No. There is an undo button and version history. It is safe to experiment.</p></details></div>
+      <div class="card"><details><summary>Will it work on a phone?</summary><p>Yes. Your pages and apps are responsive. Buttons and text adapt to small screens.</p></details></div>
+      <div class="card"><details><summary>Do I need to code later?</summary><p>Not to get started. Many projects ship with no code. If you need custom features later, you can add code or connect extra services.</p></details></div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2 class="section-title">Say hello</h2>
+      <p class="section-sub">Click the button below to open our contact form in a new tab.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScUasSYuOCrPJPmrokjkbf9uW1ZM4T8bZeXft6ZI_aWHKrJBw/viewform" target="_blank" class="btn">Open Contact Form</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> No Code Pioneers. Start small, keep improving, and bring your ideas to life.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
